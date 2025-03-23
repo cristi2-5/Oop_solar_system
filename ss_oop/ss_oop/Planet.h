@@ -25,5 +25,4 @@ public:
     void afisare(); // Afiseaza informatiile despre planeta
 	 // Adauga un satelit in jurul planetei
     friend class System;
-	friend class Satellite;
 };
