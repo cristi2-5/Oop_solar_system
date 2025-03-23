@@ -127,15 +127,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BlackHole.cpp" />
     <ClCompile Include="CorpCeresc.cpp" />
     <ClCompile Include="Planet.cpp" />
+    <ClCompile Include="Satellite.cpp" />
     <ClCompile Include="ss_oop.cpp" />
     <ClCompile Include="Stea.cpp" />
+    <ClCompile Include="System.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BlackHole.h" />
     <ClInclude Include="CorpCeresc.h" />
     <ClInclude Include="Planet.h" />
+    <ClInclude Include="Satellite.h" />
     <ClInclude Include="Stea.h" />
+    <ClInclude Include="System.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

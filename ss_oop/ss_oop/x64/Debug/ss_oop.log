@@ -1,4 +1,45 @@
 ﻿  Planet.cpp
+C:\Users\stoia\Desktop\Git\Oop_solar_system\ss_oop\ss_oop\Satellite.h(19,7): error C2027: use of undefined type 'Planet'
+  (compiling source file 'Planet.cpp')
+      C:\Users\stoia\Desktop\Git\Oop_solar_system\ss_oop\ss_oop\Satellite.h(6,7):
+      see declaration of 'Planet'
+  
+C:\Users\stoia\Desktop\Git\Oop_solar_system\ss_oop\ss_oop\Satellite.h(20,36): error C2027: use of undefined type 'Planet'
+  (compiling source file 'Planet.cpp')
+      C:\Users\stoia\Desktop\Git\Oop_solar_system\ss_oop\ss_oop\Satellite.h(6,7):
+      see declaration of 'Planet'
+  
+  Satellite.cpp
+C:\Users\stoia\Desktop\Git\Oop_solar_system\ss_oop\ss_oop\Satellite.h(19,7): error C2027: use of undefined type 'Planet'
+  (compiling source file 'Satellite.cpp')
+      C:\Users\stoia\Desktop\Git\Oop_solar_system\ss_oop\ss_oop\Satellite.h(6,7):
+      see declaration of 'Planet'
+  
+C:\Users\stoia\Desktop\Git\Oop_solar_system\ss_oop\ss_oop\Satellite.h(20,36): error C2027: use of undefined type 'Planet'
+  (compiling source file 'Satellite.cpp')
+      C:\Users\stoia\Desktop\Git\Oop_solar_system\ss_oop\ss_oop\Satellite.h(6,7):
+      see declaration of 'Planet'
+  
   ss_oop.cpp
+C:\Users\stoia\Desktop\Git\Oop_solar_system\ss_oop\ss_oop\Satellite.h(19,7): error C2027: use of undefined type 'Planet'
+  (compiling source file 'ss_oop.cpp')
+      C:\Users\stoia\Desktop\Git\Oop_solar_system\ss_oop\ss_oop\Satellite.h(6,7):
+      see declaration of 'Planet'
+  
+C:\Users\stoia\Desktop\Git\Oop_solar_system\ss_oop\ss_oop\Satellite.h(20,36): error C2027: use of undefined type 'Planet'
+  (compiling source file 'ss_oop.cpp')
+      C:\Users\stoia\Desktop\Git\Oop_solar_system\ss_oop\ss_oop\Satellite.h(6,7):
+      see declaration of 'Planet'
+  
+  System.cpp
+C:\Users\stoia\Desktop\Git\Oop_solar_system\ss_oop\ss_oop\Satellite.h(19,7): error C2027: use of undefined type 'Planet'
+  (compiling source file 'System.cpp')
+      C:\Users\stoia\Desktop\Git\Oop_solar_system\ss_oop\ss_oop\Satellite.h(6,7):
+      see declaration of 'Planet'
+  
+C:\Users\stoia\Desktop\Git\Oop_solar_system\ss_oop\ss_oop\Satellite.h(20,36): error C2027: use of undefined type 'Planet'
+  (compiling source file 'System.cpp')
+      C:\Users\stoia\Desktop\Git\Oop_solar_system\ss_oop\ss_oop\Satellite.h(6,7):
+      see declaration of 'Planet'
+  
   Generating Code...
-  ss_oop.vcxproj -> C:\Users\stoia\Desktop\Git\Oop_solar_system\ss_oop\x64\Debug\ss_oop.exe
