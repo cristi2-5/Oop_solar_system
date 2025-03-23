@@ -127,7 +127,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CorpCeresc.cpp" />
+    <ClCompile Include="Planet.cpp" />
     <ClCompile Include="ss_oop.cpp" />
+    <ClCompile Include="Stea.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CorpCeresc.h" />
+    <ClInclude Include="Planet.h" />
+    <ClInclude Include="Stea.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

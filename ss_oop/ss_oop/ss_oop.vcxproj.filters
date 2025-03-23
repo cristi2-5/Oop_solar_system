@@ -18,5 +18,25 @@
     <ClCompile Include="ss_oop.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CorpCeresc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Stea.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Planet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CorpCeresc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Stea.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Planet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
