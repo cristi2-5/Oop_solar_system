@@ -10,9 +10,9 @@ class Satellite : public CorpCeresc
 private:
 	std::string NumeOrbita;
 public:
-	Satellite(std::string nume, double masa, double diametru, double x, double y, double z); // Constructor
+	Satellite(std::string nume, double masa, double diametru, double x, double y); // Constructor
 	Satellite()
-		: CorpCeresc("Necunoscut", 0, 0, 0, 0, 0) {
+		: CorpCeresc("Necunoscut", 0, 0, 0, 0) {
 	}; // Constructor implicit
 	std::string getNume();	// Getter pentru nume
 	void afisare();	// Afiseaza informatiile despre sateliti

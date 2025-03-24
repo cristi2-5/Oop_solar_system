@@ -1,9 +1,9 @@
 #include "Stea.h"
 #include <iostream>
 
-Stea::Stea(std::string nume, double masa, double diametru, double x, double y, double z,
+Stea::Stea(std::string nume, double masa, double diametru, double x, double y,
     double temperatura, double luminozitate, std::string tipSpectral)
-    : CorpCeresc(nume, masa, diametru, x, y, z),
+    : CorpCeresc(nume, masa, diametru, x, y),
     temperatura(temperatura), luminozitate(luminozitate), tipSpectral(tipSpectral) {
 }
 

@@ -2,7 +2,7 @@
 #include <iostream>
 class Stea;
 class Planet;
-class Satellite;
+
 System::System(std::string nume, int NrPlanete, int NrStele) : nume(nume), NrPlanete(0), NrStele(0) {
 	if (NrPlanete > MAX_PLANETE) {
 		std::cout << "Prea multe planete" << std::endl;

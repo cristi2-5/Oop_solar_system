@@ -6,7 +6,7 @@
 class Planet;
 
 Satellite::Satellite(std::string nume, double masa, double diametru,
-	double x, double y, double z) : CorpCeresc(nume, masa, diametru, x, y, z) {
+	double x, double y) : CorpCeresc(nume, masa, diametru, x, y) {
 }
 void Satellite::afisare()  {
 	std::cout << "Satelit: " << nume << " orbitea in jurul planetei "  << NumeOrbita << std::endl;

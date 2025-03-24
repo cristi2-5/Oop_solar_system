@@ -5,9 +5,9 @@
 
 class Satellite;
 
-Planet::Planet(std::string nume, double masa, double diametru, double x, double y, double z,
+Planet::Planet(std::string nume, double masa, double diametru, double x, double y, 
 	std::string tip, bool atmosfera, int nrSateliti)
-	: CorpCeresc(nume, masa, diametru, x, y, z),
+	: CorpCeresc(nume, masa, diametru, x, y),
 	tip(tip), atmosfera(atmosfera), nrSateliti(nrSateliti) {
 }
 std::string Planet::getNume() {
@@ -15,7 +15,7 @@ std::string Planet::getNume() {
 }
 void Planet::adaugaSatelit( Satellite s) {
 	if (nrSateliti < MAX_SATELITI) {
-		sateliti[nrSateliti] = s; // Copierea directa a obiectului
+		sateliti[nrSateliti] = s; 
 		nrSateliti++;
 	}
 	else {
