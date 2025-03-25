@@ -31,14 +31,3 @@ void System::adaugaStea(const Stea& s) {
 }
 
 
-
-void System::afisare() {
-	std::cout << "Sistemul " << nume << " contine " << NrPlanete << " planete si " << NrStele << " stele" << std::endl;
-	for (int i = 0; i < NrStele; i++) {
-		stea[i].afisare();
-	}
-	for (int i = 0; i < NrPlanete; i++) {
-		planete[i].afisare();
-	}
-}
-

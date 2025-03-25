@@ -1,8 +1,4 @@
-﻿  BlackHole.cpp
-  CorpCeresc.cpp
-  Planet.cpp
-  Satellite.cpp
-  ss_oop.cpp
+﻿  ss_oop.cpp
 C:\Users\stoia\Desktop\sfml\SFML-3.0.0\include\SFML\System\Exception.hpp(41,47): warning C4275: non dll-interface class 'std::runtime_error' used as base for dll-interface class 'sf::Exception'
   (compiling source file 'ss_oop.cpp')
       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\stdexcept(100,19):
@@ -10,7 +6,4 @@ C:\Users\stoia\Desktop\sfml\SFML-3.0.0\include\SFML\System\Exception.hpp(41,47):
       C:\Users\stoia\Desktop\sfml\SFML-3.0.0\include\SFML\System\Exception.hpp(41,23):
       see declaration of 'sf::Exception'
   
-  Stea.cpp
-  System.cpp
-  Generating Code...
   ss_oop.vcxproj -> C:\Users\stoia\Desktop\Git\Oop_solar_system\ss_oop\x64\Debug\ss_oop.exe

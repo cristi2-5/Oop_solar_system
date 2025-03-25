@@ -18,6 +18,5 @@ class System
 
 		void adaugaPlaneta(const Planet& p); // Adauga o planeta in sistem
 		void adaugaStea(const Stea& s); // Adauga o stea in sistem
-		void afisare(); // Afiseaza informatiile despre sistem
 };
 

@@ -1,4 +1,4 @@
-#include <SFML/Graphics.hpp>
+﻿#include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/System.hpp>
 #include <iostream>  
@@ -11,46 +11,37 @@
 
 int main()  
 {  
-   Satellite* s2 = new Satellite("Phobos", 123, 123, 123, 123);  
-   Satellite* s = new Satellite("Luna", 123, 123, 123, 123);  
-   Stea* soare = new Stea("Soae", 1234, 123, 3123, 32132, 0, 123, "spiralata");
-   Stea* soare2 = new Stea("Soae2", 1234, 123, 3123, 32132, 0, 123, "spiralata");
-   Planet* p = new Planet("Pamant", 123, 123, 123, 123, "terestra", true, 0);  
-   Planet* p2 = new Planet("Marte", 123, 123, 123, 123, "terestra", true, 0);  
-   BlackHole* b = new BlackHole("Gaura Neagra", 123, 123, 123, 123, 123);  
-   System* sys = new System("Sistem Solar", 2, 2);  
-   s->SetNumeOrbita(p->getNume());  
-   s2->SetNumeOrbita(p->getNume());  
-   p->adaugaSatelit(*s);  
-   p->adaugaSatelit(*s2);  
-   sys->adaugaPlaneta(*p);  
-   sys->adaugaPlaneta(*p2);  
-   sys->adaugaStea(*soare);
-   sys->adaugaStea(*soare2);
-   sys->afisare();  
-   delete s2;  
-   delete s;  
-   delete soare;  
-   delete p;  
-   delete p2;  
-   delete b;  
-   delete sys;
-   sf::RenderWindow window(sf::VideoMode({ 800, 600 }), "SFML 3 - Graphics");
-
-   sf::CircleShape shape(100.f);
-   shape.setFillColor(sf::Color::Green);
-
+ 
+   Stea* soare2 = new Stea("Soae2", 1234.0f, 150.0f,160.0f,320.0f,100,"Yellow"); 
+   sf::RenderWindow window(sf::VideoMode({ 1920, 1080 }), "SFML 3 - Graphics");
+   Stea* soare1 = new Stea("Soae2", 1234.0f, 300.0f, 320.0f, 160.0f, 100, "Yellow");
+   sf::View view;
+   view.setSize({ 1920, 1080 });
+   view.setCenter({ 960, 540 });
+   view.zoom(0.5f);
+   // zoom the view relatively to its current size (apply a factor 0.5, so its final size is 600x400)
+   
    while (window.isOpen()) {
        while (auto event = window.pollEvent()) {
            if (event->is<sf::Event::Closed>())
                window.close();
-       }
+           if (const auto* mouseWheelScrolled = event->getIf<sf::Event::MouseWheelScrolled>())
+           {
+               if (mouseWheelScrolled->wheel == sf::Mouse::Wheel::Vertical) {
+                   float zoomFactor = (mouseWheelScrolled->delta > 0) ? 0.9f : 1.1f;
+                   view.zoom(zoomFactor);
+               }
+           }
 
-       window.clear();
-       window.draw(shape);
+       }
+        window.clear();
+       
+	   window.setView(view);   
+       soare2->drawme(window);
+	   soare1->drawme(window);
        window.display();
    }
 
-
+    delete soare2;
    return 0;  
 }

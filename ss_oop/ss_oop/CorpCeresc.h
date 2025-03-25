@@ -6,7 +6,7 @@ class CorpCeresc
 	std::string nume; 
 	double masa, diametru, x, y; 
 	public:
-	CorpCeresc(std::string nume, double masa, double diametru, double x, double y);
+	CorpCeresc(std::string nume, float masa, float diametru, float x, float y);
 	~CorpCeresc(){};	
 };
 

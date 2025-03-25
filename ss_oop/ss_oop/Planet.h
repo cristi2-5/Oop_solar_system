@@ -23,5 +23,4 @@ public:
     void adaugaSatelit(Satellite s);
     std::string getNume(); // Getter pentru nume
     void afisare(); // Afiseaza informatiile despre planet
-    friend class System;
 };
