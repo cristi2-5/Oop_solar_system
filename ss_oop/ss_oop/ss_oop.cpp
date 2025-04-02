@@ -13,15 +13,17 @@ int main()
    Stea* soare2 = new Stea("Soae2", 100, 60, {0.f,0.f},100,"Red");
    Stea* soare3 = new Stea("Soae2", 100, 60, { 310.f, 420.f }, 100, "Blue");
    Stea* soare4 = new Stea("Soae2", 100, 60, { 110.f, 540.f }, 100, "Red");
-
-   sistem.adaugaCorp(soare2);
-   sistem.adaugaCorp(soare3);
-   sistem.adaugaCorp(soare4);
+   Planet* planeta1 = new Planet("caca", 100, 20, { 400.f,400.f }, "Red",true,10);
+ 
+   sistem.adaugaSoare(soare2);
+   sistem.adaugaSoare(soare3);
+   sistem.adaugaSoare(soare4);
+   sistem.adaugaPlaneta(planeta1);
 
    sf::RenderWindow window(sf::VideoMode({ 1920, 1080 }), "SFML 3 - Graphics");
    sf::View view;
    view.setSize({ 1920, 1080 });
-   view.setCenter({ 960, 540 });
+   view.setCenter({0,0 });
    view.zoom(0.5f);
    
    while (window.isOpen()) {
@@ -37,6 +39,7 @@ int main()
            }
 
        }
+       sistem.updatePlanetRotation(0.1);
        window.clear();
        for (sf::CircleShape gay : sistem.drawEntities())
            window.draw(gay);

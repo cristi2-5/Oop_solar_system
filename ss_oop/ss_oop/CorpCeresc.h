@@ -14,6 +14,7 @@ class CorpCeresc
 	double getDiameter() const { return diametru; }
 	std::string getColor() { return color; }
 	sf::Vector2f getPosition() { return position; }
+	void setPosition(sf::Vector2f pos) { position = pos; }
 	void setType(std::string type);
 };
 

@@ -6,15 +6,7 @@ C:\Users\stoia\Desktop\sfml\SFML-3.0.0\include\SFML\System\Exception.hpp(41,47):
       C:\Users\stoia\Desktop\sfml\SFML-3.0.0\include\SFML\System\Exception.hpp(41,23):
       see declaration of 'sf::Exception'
   
-C:\Users\stoia\Desktop\Git\Oop_solar_system\ss_oop\ss_oop\System.cpp(14,42): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  ss_oop.cpp
-C:\Users\stoia\Desktop\sfml\SFML-3.0.0\include\SFML\System\Exception.hpp(41,47): warning C4275: non dll-interface class 'std::runtime_error' used as base for dll-interface class 'sf::Exception'
-  (compiling source file 'ss_oop.cpp')
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\stdexcept(100,19):
-      see declaration of 'std::runtime_error'
-      C:\Users\stoia\Desktop\sfml\SFML-3.0.0\include\SFML\System\Exception.hpp(41,23):
-      see declaration of 'sf::Exception'
-  
-  Generating Code...
-C:\Users\stoia\Desktop\Git\Oop_solar_system\ss_oop\ss_oop\System.cpp(25,1): warning C4715: 'System::colorConvertor': not all control paths return a value
+C:\Users\stoia\Desktop\Git\Oop_solar_system\ss_oop\ss_oop\System.cpp(26,42): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\stoia\Desktop\Git\Oop_solar_system\ss_oop\ss_oop\System.cpp(78,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\stoia\Desktop\Git\Oop_solar_system\ss_oop\ss_oop\System.cpp(37,1): warning C4715: 'System::colorConvertor': not all control paths return a value
   ss_oop.vcxproj -> C:\Users\stoia\Desktop\Git\Oop_solar_system\ss_oop\x64\Debug\ss_oop.exe
