@@ -3,31 +3,34 @@
 class Stea;
 class Planet;
 
-System::System(std::string nume, int NrPlanete, int NrStele) : nume(nume), NrPlanete(0), NrStele(0) {
-	if (NrPlanete > MAX_PLANETE) {
-		std::cout << "Prea multe planete" << std::endl;
-		return;
-	}
-	if (NrStele > MAX_STELE) {
-		std::cout << "Prea multe stele" << std::endl;
-		return;
-	}
+
+
+void System::adaugaCorp(CorpCeresc* corp) {
+	corpuri.push_back(corp);
 }
 
-void System::adaugaPlaneta(const Planet& p) {
-	if (NrPlanete == MAX_PLANETE) {
-		std::cout << "Prea multe planete" << std::endl;
-		return;
-	}
-	planete[NrPlanete++] = p;
+sf::CircleShape System::createEntity(CorpCeresc* corp)
+{
+	sf::CircleShape sprite(corp->getDiameter());
+	sprite.setFillColor(colorConvertor(corp->getColor()));
+	sprite.setPosition(corp->getPosition());
+	sprite.setOrigin(sprite.getGeometricCenter());
+	return sprite;
+}
+sf::Color System::colorConvertor(std::string color) {
+	if (color == "Red")
+		return sf::Color::Red;
+	if (color == "Blue")
+		return sf::Color::Blue;
 }
 
-void System::adaugaStea(const Stea& s) {
-	if (NrStele == MAX_STELE) {
-		std::cout << "Prea multe stele" << std::endl;
-		return;
+std::vector<sf::CircleShape> System::drawEntities()
+{   
+	std::vector < sf::CircleShape> sprites;
+	for (auto corp : corpuri) {
+		sprites.push_back(createEntity(corp));
 	}
-	stea[NrStele++] = s;
+	return sprites;
 }
 
 

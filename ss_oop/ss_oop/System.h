@@ -2,6 +2,8 @@
 #include <string>
 #include "Stea.h"
 #include "Planet.h"
+#include "CorpCeresc.h"
+#include <vector>
 
 #define MAX_PLANETE 20
 #define MAX_STELE 20
@@ -9,14 +11,15 @@
 class System
 {
     private:
-		std::string nume; // Numele sistemului
-        Stea stea[MAX_STELE]; // Steaua centralã
-        Planet planete[MAX_PLANETE];// Lista de planete din sistem
-		int NrPlanete,NrStele; // Numarul de planete din sistem
-    public:
-		System(std::string nume,int NrPlanete, int NrStele); // Constructor    
+		std::vector<CorpCeresc*> corpuri;
 
-		void adaugaPlaneta(const Planet& p); // Adauga o planeta in sistem
-		void adaugaStea(const Stea& s); // Adauga o stea in sistem
+		
+    public:
+		System() {}; // Constructor    
+		void adaugaCorp(CorpCeresc* corp);
+		sf::CircleShape createEntity(CorpCeresc* corp);
+		sf::Color colorConvertor(std::string color);
+		std::vector<sf::CircleShape> drawEntities();
+		~System() {};
 };
 
