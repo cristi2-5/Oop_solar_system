@@ -2,23 +2,19 @@
 #include <SFML/Window.hpp>
 #include <SFML/System.hpp>
 #include <iostream>  
-#include "CorpCeresc.h"  
-#include "Stea.h"  
+#include "SpaceObject.h"  
+#include "Star.h"  
 #include "Planet.h" 
 #include "System.h"
 
 int main()  
 {  
-   System sistem;
-   Stea* soare2 = new Stea("Soae2", 100, 60, {0.f,0.f},100,"Red");
-   Stea* soare3 = new Stea("Soae2", 100, 60, { 310.f, 420.f }, 100, "Blue");
-   Stea* soare4 = new Stea("Soae2", 100, 60, { 110.f, 540.f }, 100, "Red");
-   Planet* planeta1 = new Planet("caca", 100, 20, { 400.f,400.f }, "Red",true,10);
+   System system;
+   Star* sun1 = new Star("Sun", 100, 100, {0.f,0.f},100,"Yellow");
+   Planet* planet1 = new Planet("Earth", 100, 20, { 400.f,400.f }, "Blue",true,10);
  
-   sistem.adaugaSoare(soare2);
-   sistem.adaugaSoare(soare3);
-   sistem.adaugaSoare(soare4);
-   sistem.adaugaPlaneta(planeta1);
+   system.addSun(sun1);
+   system.addPlanet(planet1);
 
    sf::RenderWindow window(sf::VideoMode({ 1920, 1080 }), "SFML 3 - Graphics");
    sf::View view;
@@ -39,14 +35,14 @@ int main()
            }
 
        }
-       sistem.updatePlanetRotation(0.1);
+       system.updatePlanetRotation(0.1);
        window.clear();
-       for (sf::CircleShape gay : sistem.drawEntities())
-           window.draw(gay);
+       for (sf::CircleShape entities : system.drawEntities())
+           window.draw(entities);
 	   window.setView(view);   
        window.display();
    }
 
-    delete soare2;
+    delete sun1;
    return 0;  
 }

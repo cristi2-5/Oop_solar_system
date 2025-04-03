@@ -18,10 +18,10 @@
     <ClCompile Include="ss_oop.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CorpCeresc.cpp">
+    <ClCompile Include="SpaceObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Stea.cpp">
+    <ClCompile Include="Star.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Planet.cpp">
@@ -30,18 +30,24 @@
     <ClCompile Include="System.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Satellite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CorpCeresc.h">
+    <ClInclude Include="SpaceObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Stea.h">
+    <ClInclude Include="Star.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Planet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="System.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Satellite.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

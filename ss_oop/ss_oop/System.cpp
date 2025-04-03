@@ -1,31 +1,31 @@
 ﻿#include "System.h"
 #include <iostream>
 #include <cmath>
-class Stea;
+class Star;
 class Planet;
 
 
 
 
 
-void System::adaugaSoare(Stea* corp)
+void System::addSun(Star* body)
 {
-	stele.push_back(corp);
-	corpuri.push_back(corp);
+	stars.push_back(body);
+	bodies.push_back(body);
 }
 
-void System::adaugaPlaneta(Planet* corp)
+void System::addPlanet(Planet* body)
 {
-	planete.push_back(corp);
-	corpuri.push_back(corp);
-	closestSunPosition.push_back(FindClosestSunPosition(corp));
+	planets.push_back(body);
+	bodies.push_back(body);
+	closestSunPosition.push_back(FindClosestSunPosition(body));
 }
 
-sf::CircleShape System::createEntity(CorpCeresc* corp)
+sf::CircleShape System::createEntity(SpaceObject* body)
 {
-	sf::CircleShape sprite(corp->getDiameter());
-	sprite.setFillColor(colorConvertor(corp->getColor()));
-	sprite.setPosition(corp->getPosition());
+	sf::CircleShape sprite(body->getDiameter());
+	sprite.setFillColor(colorConvertor(body->getColor()));
+	sprite.setPosition(body->getPosition());
 	sprite.setOrigin(sprite.getGeometricCenter());
 	return sprite;
 }
@@ -34,21 +34,28 @@ sf::Color System::colorConvertor(std::string color) {
 		return sf::Color::Red;
 	if (color == "Blue")
 		return sf::Color::Blue;
+	if (color == "Green")
+		return sf::Color::Green;
+	if (color == "Yellow")
+		return sf::Color::Yellow;
+	if (color == "White")
+		return sf::Color::White;
+
 }
 
 
 std::vector<sf::CircleShape> System::drawEntities()
 {   
 	std::vector < sf::CircleShape> sprites;
-	for (auto corp : corpuri) {
-		sprites.push_back(createEntity(corp));
+	for (auto body : bodies) {
+		sprites.push_back(createEntity(body));
 	}
 	return sprites;
 }
 void System::updatePlanetRotation(float step)
 {
 	int index = 0;
-	for (auto planet : planete) {
+	for (auto planet : planets) {
 		auto [Xb, Yb] = planet->getPosition();
 		sf::Vector2f SunPosition = closestSunPosition[index++];
 
@@ -68,18 +75,18 @@ void System::updatePlanetRotation(float step)
 	}
 }
 
-sf::Vector2f System::FindClosestSunPosition(CorpCeresc* corp)
+sf::Vector2f System::FindClosestSunPosition(SpaceObject* body)
 {
-	CorpCeresc* c=nullptr;
+	SpaceObject* c=nullptr;
 	float minDist = 1000000000;
-	auto [Xb, Yb] = corp->getPosition();
-	for (auto stea : stele) {
-		auto [Xa, Ya] = stea->getPosition();
+	auto [Xb, Yb] = body->getPosition();
+	for (auto star : stars) {
+		auto [Xa, Ya] = star->getPosition();
 		float distance = sqrt(pow(Xb - Xa, 2) + pow(Yb - Ya, 2));
 		if (distance < minDist)
 		{
 			minDist = distance;
-			c = stea;
+			c = star;
 		}
 	}
 	return c->getPosition();
