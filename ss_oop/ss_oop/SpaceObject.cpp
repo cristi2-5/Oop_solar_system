@@ -29,3 +29,8 @@ void SpaceObject::setType(std::string type)
 {
 	this->type = type;
 }
+
+std::string SpaceObject::getName()
+{
+	return name;
+}

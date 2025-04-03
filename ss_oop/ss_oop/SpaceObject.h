@@ -3,7 +3,7 @@
 #include <SFML/System.hpp>
 class SpaceObject
 {	
-	protected:
+	private:
 	std::string name; 
 	double mass, diameter;
 	sf::Vector2f position;
@@ -16,5 +16,6 @@ class SpaceObject
 	sf::Vector2f getPosition();
 	void setPosition(sf::Vector2f pos);
 	void setType(std::string type);
+	std::string getName();
 };
 

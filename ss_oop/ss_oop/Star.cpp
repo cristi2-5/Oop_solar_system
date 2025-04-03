@@ -12,6 +12,6 @@ float Star::getTemperature() const
 
 
 void Star::afisare()  {
-    std::cout << "Stea: " << name << " | Tip: "  << " | Temp: "
+    std::cout << "Stea: " << getName() << " | Tip: "  << " | Temp: "
         << temperature << "K" << std::endl;
 }

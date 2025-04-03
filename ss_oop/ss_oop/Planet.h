@@ -13,7 +13,6 @@ private:
 public:
  
     Planet(std::string name, double mass, double diameter, sf::Vector2f position, std::string color,bool atmosphere, float temperature); // Constructor
-    std::string getName(); // Getter pentru nume
     void afisare(); // Afiseaza informatiile despre planet
     float getTemperature() const;
 };

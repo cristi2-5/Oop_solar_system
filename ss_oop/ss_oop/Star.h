@@ -5,7 +5,6 @@ class Star : public  SpaceObject
 {
 private:
 	float temperature;
-	std::string color;
 public:
 	
 	Star(std::string name, float mass, float diameter, sf::Vector2f position, float temperature, std::string color); 
