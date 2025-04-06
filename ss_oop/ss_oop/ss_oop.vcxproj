@@ -132,19 +132,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GazeousPlanet.cpp" />
+    <ClCompile Include="Meteorite.cpp" />
     <ClCompile Include="SpaceObject.cpp" />
     <ClCompile Include="Planet.cpp" />
     <ClCompile Include="Satellite.cpp" />
     <ClCompile Include="ss_oop.cpp" />
     <ClCompile Include="Star.cpp" />
     <ClCompile Include="System.cpp" />
+    <ClCompile Include="TelluricPlanet.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GazeousPlanet.h" />
+    <ClInclude Include="Meteorite.h" />
     <ClInclude Include="SpaceObject.h" />
     <ClInclude Include="Planet.h" />
     <ClInclude Include="Satellite.h" />
     <ClInclude Include="Star.h" />
     <ClInclude Include="System.h" />
+    <ClInclude Include="TelluricPlanet.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

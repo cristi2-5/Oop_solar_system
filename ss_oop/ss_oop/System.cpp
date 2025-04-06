@@ -4,7 +4,7 @@
 class Star;
 class Planet;
 class Satellite;
-
+class Meteorite;
 
 
 
@@ -18,14 +18,15 @@ void System::addPlanet(Planet* body)
 {
 	planets.push_back(body);
 	bodies.push_back(body);
-	closestSunPosition.push_back(FindClosestSunPosition(body));
 }
+
 
 void System::addSatellite(Satellite* body)
 {
 	satellites.push_back(body);
 	bodies.push_back(body);
 }
+
 
 sf::CircleShape System::createEntity(SpaceObject* body)
 {
@@ -58,42 +59,41 @@ std::vector<sf::CircleShape> System::drawEntities()
 	}
 	return sprites;
 }
-void System::updatePlanetRotation(float step)
+void System::updatePlanetRotation(Planet* planet,float step)
 {
-	int index = 0;
-	for (auto planet : planets) {
-		auto [Xb, Yb] = planet->getPosition();
-		sf::Vector2f SunPosition = closestSunPosition[index++];
+	sf::Vector2f pos = planet->getPosition();
 
-		float dx = Xb - SunPosition.x;
-		float dy = Yb - SunPosition.y;
-		float distance = sqrt(dx * dx + dy * dy);
+	
+	sf::Vector2f SunPosition = planet->getParentStar()->getPosition();
 
-		if (distance == 0) continue; 
+	float dx = pos.x - SunPosition.x;
+	float dy = pos.y - SunPosition.y;
+	float distance = sqrt(dx * dx + dy * dy);
 
-		float angle = atan2(dy, dx); 
-		angle += step / distance; 
+	if (distance == 0) return;
 
-		Xb = SunPosition.x + distance * cos(angle);
-		Yb = SunPosition.y + distance * sin(angle);
+	float angle = atan2(dy, dx);
+	angle += step / distance;
 
-		planet->setPosition({ Xb, Yb });
-	}
+	float newX = SunPosition.x + distance * cos(angle);
+	float newY = SunPosition.y + distance * sin(angle);
+
+	planet->setPosition({ newX, newY });
 }
 void System::updateSatelliteRotation(Satellite* satellite, float step)
 {
 	Planet* planet = satellite->getParentPlanet();
-	if (!planet) return; // Dacă satelitul nu are planetă, ieșim
+	if (!planet) return; 
 
-	static std::unordered_map<Satellite*, float> angles; // Unghiurile relative ale sateliților
+	static std::unordered_map<Satellite*, float> angles; 
 
-	auto [Xp, Yp] = planet->getPosition(); // Poziția actualizată a planetei
+	auto [Xp, Yp] = planet->getPosition(); 
 
-	// Distanța inițială față de planetă trebuie memorată separat
+	
 	static std::unordered_map<Satellite*, float> distances;
 
 	if (distances.find(satellite) == distances.end()) {
-		// Inițializăm distanța și unghiul inițial la prima actualizare
+		
 		auto [Xs, Ys] = satellite->getPosition();
 		float dx = Xs - Xp;
 		float dy = Ys - Yp;
@@ -101,10 +101,8 @@ void System::updateSatelliteRotation(Satellite* satellite, float step)
 		angles[satellite] = atan2(dy, dx);
 	}
 
-	// Creștem unghiul de rotație
 	angles[satellite] += step;
 
-	// Calculăm noua poziție pe orbită
 	float radius = distances[satellite];
 	float newX = Xp + radius * cos(angles[satellite]);
 	float newY = Yp + radius * sin(angles[satellite]);
@@ -112,23 +110,25 @@ void System::updateSatelliteRotation(Satellite* satellite, float step)
 	satellite->setPosition({ newX, newY });
 }
 
-
-sf::Vector2f System::FindClosestSunPosition(SpaceObject* body)
-{
-	SpaceObject* c=nullptr;
-	float minDist = 1000000000;
-	auto [Xb, Yb] = body->getPosition();
-	for (auto star : stars) {
-		auto [Xa, Ya] = star->getPosition();
-		float distance = sqrt(pow(Xb - Xa, 2) + pow(Yb - Ya, 2));
-		if (distance < minDist)
-		{
-			minDist = distance;
-			c = star;
-		}
+void System::updateMeteorites(float dt, float screenWidth, float screenHeight) {
+	meteoriteSpawnTimer -= dt;
+	if (meteoriteSpawnTimer <= 0.0f) {
+		meteorites.emplace_back(screenWidth, screenHeight);
+		meteoriteSpawnTimer = meteoriteSpawnInterval;
 	}
-	return c->getPosition();
-	
+
+	for (int i = 0; i < meteorites.size(); i++) {
+		meteorites[i].update(dt);
+		
+	}
 }
+
+void System::drawMeteorites(sf::RenderWindow& window) {
+	for (auto& m : meteorites) {
+		m.draw(window);
+	}
+}
+
+
 
 

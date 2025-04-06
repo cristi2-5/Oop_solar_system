@@ -13,11 +13,11 @@ double SpaceObject::getDiameter() const
 {
 	return diameter;
 }
-std::string SpaceObject::getColor()
+std::string SpaceObject::getColor() const
 {
 	return color;
 }
-sf::Vector2f SpaceObject::getPosition()
+sf::Vector2f SpaceObject::getPosition() const
 {
 	return position;
 }
@@ -25,12 +25,8 @@ void SpaceObject::setPosition(sf::Vector2f position)
 {
 	this->position = position;
 }
-void SpaceObject::setType(std::string type)
-{
-	this->type = type;
-}
 
-std::string SpaceObject::getName()
+std::string SpaceObject::getName() const
 {
 	return name;
 }

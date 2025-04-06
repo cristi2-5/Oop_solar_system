@@ -7,15 +7,14 @@ class SpaceObject
 	std::string name; 
 	double mass, diameter;
 	sf::Vector2f position;
-	std::string type = "uknown",color;
+	std::string color;
 	public:
 	SpaceObject(std::string name, float mass, float diameter, sf::Vector2f position,std::string color);
 	virtual ~SpaceObject(){};	
 	double getDiameter() const;
-	std::string getColor();
-	sf::Vector2f getPosition();
+	std::string getColor() const;
+	sf::Vector2f getPosition() const;
 	void setPosition(sf::Vector2f pos);
-	void setType(std::string type);
-	std::string getName();
+	std::string getName() const;
 };
 
