@@ -7,11 +7,12 @@
 #include "Planet.h" 
 #include "System.h"
 #include "Satellite.h"
-
+#include "Rocket.h"
 int main()  
 {  
    sf::Clock clock; 
    System system;
+   Rocket rocket;
    Star* sun1 = new Star("Sun", 100, 100, {0.f,0.f},100,"Yellow");
    TelluricPlanet* planet1 = new TelluricPlanet("Earth", 100, 20, { 400.f,400.f }, "Blue",true,10,"telluric",sun1);
    GazeousPlanet* planet2 = new GazeousPlanet("Neptun", 100, 50, { 1000.f,1000.f }, "Red", true, 10,"gaseous",sun1);
@@ -43,6 +44,9 @@ int main()
            }
 
        }
+       window.setView(view);
+       view.setCenter(rocket.getPosition());
+	   rocket.handleInput(deltaTime);
        system.updateMeteorites(deltaTime, 1920, 1080);
        system.updatePlanetRotation(planet1,0.1);
 	   system.updatePlanetRotation(planet2, 0.5);
@@ -51,7 +55,7 @@ int main()
        for (sf::CircleShape entities : system.drawEntities())
            window.draw(entities);
        system.drawMeteorites(window);
-      
+	   rocket.draw(window);
 	   window.setView(view);   
        window.display();
    }
