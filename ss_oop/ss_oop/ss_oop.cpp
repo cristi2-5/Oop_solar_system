@@ -8,6 +8,10 @@
 #include "System.h"
 #include "Satellite.h"
 #include "Rocket.h"
+
+using namespace Space;
+using namespace Simulation;
+
 int main()  
 {  
    sf::Clock clock; 
@@ -48,9 +52,9 @@ int main()
        view.setCenter(rocket.getPosition());
 	   rocket.handleInput(deltaTime);
        system.updateMeteorites(deltaTime, 1920, 1080);
-       system.updatePlanetRotation(planet1,0.1);
-	   system.updatePlanetRotation(planet2, 0.5);
-       system.updateSatelliteRotation(satellite1, 0.002);
+       system.rotateEntity(planet1, 0.1);
+       system.rotateEntity(planet2, 0.5);
+       system.rotateEntity(satellite1, 0.002);
        window.clear();
        for (sf::CircleShape entities : system.drawEntities())
            window.draw(entities);
@@ -59,8 +63,10 @@ int main()
 	   window.setView(view);   
        window.display();
    }
-   sun1->afisare();
-   planet1->afisare();
+   system.printObjects();
+   std::cout << "Distanta dintre planete este: " << (*planet1 + *planet2) << " unitati\n"<<std::endl;
+   std::cout << *planet1 << std::endl;
+   system.printOrbitData(planet1);
    delete sun1;
    delete planet1;
    delete planet2;

@@ -12,6 +12,7 @@ public:
     Rocket();
     void handleInput(float deltaTime);
     sf::Vector2f getPosition() const;
+
     void setPosition(const sf::Vector2f& pos);
     void draw(sf::RenderWindow& window);
 };

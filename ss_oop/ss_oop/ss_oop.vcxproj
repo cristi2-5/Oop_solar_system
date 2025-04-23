@@ -134,6 +134,7 @@
   <ItemGroup>
     <ClCompile Include="BlackHole.cpp" />
     <ClCompile Include="GazeousPlanet.cpp" />
+    <ClCompile Include="IRotatingEntity.cpp" />
     <ClCompile Include="Meteorite.cpp" />
     <ClCompile Include="Rocket.cpp" />
     <ClCompile Include="SpaceObject.cpp" />
@@ -147,6 +148,7 @@
   <ItemGroup>
     <ClInclude Include="BlackHole.h" />
     <ClInclude Include="GazeousPlanet.h" />
+    <ClInclude Include="IRotatingEntity.h" />
     <ClInclude Include="Meteorite.h" />
     <ClInclude Include="Rocket.h" />
     <ClInclude Include="SpaceObject.h" />
