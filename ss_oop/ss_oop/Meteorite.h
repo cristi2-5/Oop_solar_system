@@ -1,21 +1,19 @@
 #pragma once
-#include "SpaceObject.h"
+
+#include "space_object.h"
 #include <SFML/Graphics.hpp>
-#include <iostream>
+
 namespace Space {
 
     class Meteorite : public SpaceObject {
     private:
-        sf::Vector2f velocity;
+        sf::Vector2f m_velocity; // vectorul de viteza si directie al meteoritului
 
     public:
-        Meteorite(float spawnWidth, float spawnHeight);
+        Meteorite(float spawn_width, float spawn_height);  
 
-        void update(float dt) ;
-        void draw(sf::RenderWindow& window);
-        void afisare() const override;
+        void Update(float delta_time); // actualizeaza pozitia
+        void Draw(sf::RenderWindow& window); 
+        void Afisare() const override; 
     };
-
 } 
-
-

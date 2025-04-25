@@ -1,19 +1,20 @@
-#pragma once
+﻿#pragma once
+
 #include <SFML/Graphics.hpp>
 #include <vector>
+
 class Rocket {
 private:
-    sf::RectangleShape shape;
-    sf::Texture texture;
-	std::vector<sf::Sprite> sprites;
-    float speed;
+    sf::Texture m_texture; // textura pentru sprite-ul rachetei
+    std::vector<sf::Sprite> m_sprites; // vector de sprite-uri 
+    float m_speed; 
 
 public:
     Rocket();
-    void handleInput(float deltaTime);
-    sf::Vector2f getPosition() const;
 
-    void setPosition(const sf::Vector2f& pos);
-    void draw(sf::RenderWindow& window);
+    void HandleInput(float delta_time); 
+    void Draw(sf::RenderWindow& window); 
+
+    sf::Vector2f GetPosition() const; 
+    void SetPosition(const sf::Vector2f& pos); 
 };
-

@@ -1,80 +1,9 @@
-﻿  GazeousPlanet.cpp
+﻿  simulation_manager.cpp
 C:\Users\stoia\Desktop\sfml\SFML-3.0.0\include\SFML\System\Exception.hpp(41,47): warning C4275: non dll-interface class 'std::runtime_error' used as base for dll-interface class 'sf::Exception'
-  (compiling source file 'GazeousPlanet.cpp')
+  (compiling source file 'simulation_manager.cpp')
       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\stdexcept(100,19):
       see declaration of 'std::runtime_error'
       C:\Users\stoia\Desktop\sfml\SFML-3.0.0\include\SFML\System\Exception.hpp(41,23):
       see declaration of 'sf::Exception'
   
-  Meteorite.cpp
-C:\Users\stoia\Desktop\sfml\SFML-3.0.0\include\SFML\System\Exception.hpp(41,47): warning C4275: non dll-interface class 'std::runtime_error' used as base for dll-interface class 'sf::Exception'
-  (compiling source file 'Meteorite.cpp')
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\stdexcept(100,19):
-      see declaration of 'std::runtime_error'
-      C:\Users\stoia\Desktop\sfml\SFML-3.0.0\include\SFML\System\Exception.hpp(41,23):
-      see declaration of 'sf::Exception'
-  
-C:\Users\stoia\Desktop\Git\Oop_solar_system\ss_oop\ss_oop\Meteorite.cpp(25,42): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  Planet.cpp
-C:\Users\stoia\Desktop\sfml\SFML-3.0.0\include\SFML\System\Exception.hpp(41,47): warning C4275: non dll-interface class 'std::runtime_error' used as base for dll-interface class 'sf::Exception'
-  (compiling source file 'Planet.cpp')
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\stdexcept(100,19):
-      see declaration of 'std::runtime_error'
-      C:\Users\stoia\Desktop\sfml\SFML-3.0.0\include\SFML\System\Exception.hpp(41,23):
-      see declaration of 'sf::Exception'
-  
-C:\Users\stoia\Desktop\Git\Oop_solar_system\ss_oop\ss_oop\Planet.cpp(7,205): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\stoia\Desktop\Git\Oop_solar_system\ss_oop\ss_oop\Planet.cpp(7,199): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  Satellite.cpp
-C:\Users\stoia\Desktop\sfml\SFML-3.0.0\include\SFML\System\Exception.hpp(41,47): warning C4275: non dll-interface class 'std::runtime_error' used as base for dll-interface class 'sf::Exception'
-  (compiling source file 'Satellite.cpp')
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\stdexcept(100,19):
-      see declaration of 'std::runtime_error'
-      C:\Users\stoia\Desktop\sfml\SFML-3.0.0\include\SFML\System\Exception.hpp(41,23):
-      see declaration of 'sf::Exception'
-  
-  SpaceObject.cpp
-C:\Users\stoia\Desktop\sfml\SFML-3.0.0\include\SFML\System\Exception.hpp(41,47): warning C4275: non dll-interface class 'std::runtime_error' used as base for dll-interface class 'sf::Exception'
-  (compiling source file 'SpaceObject.cpp')
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\stdexcept(100,19):
-      see declaration of 'std::runtime_error'
-      C:\Users\stoia\Desktop\sfml\SFML-3.0.0\include\SFML\System\Exception.hpp(41,23):
-      see declaration of 'sf::Exception'
-  
-  Star.cpp
-C:\Users\stoia\Desktop\sfml\SFML-3.0.0\include\SFML\System\Exception.hpp(41,47): warning C4275: non dll-interface class 'std::runtime_error' used as base for dll-interface class 'sf::Exception'
-  (compiling source file 'Star.cpp')
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\stdexcept(100,19):
-      see declaration of 'std::runtime_error'
-      C:\Users\stoia\Desktop\sfml\SFML-3.0.0\include\SFML\System\Exception.hpp(41,23):
-      see declaration of 'sf::Exception'
-  
-  System.cpp
-C:\Users\stoia\Desktop\sfml\SFML-3.0.0\include\SFML\System\Exception.hpp(41,47): warning C4275: non dll-interface class 'std::runtime_error' used as base for dll-interface class 'sf::Exception'
-  (compiling source file 'System.cpp')
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\stdexcept(100,19):
-      see declaration of 'std::runtime_error'
-      C:\Users\stoia\Desktop\sfml\SFML-3.0.0\include\SFML\System\Exception.hpp(41,23):
-      see declaration of 'sf::Exception'
-  
-C:\Users\stoia\Desktop\Git\Oop_solar_system\ss_oop\ss_oop\System.cpp(32,43): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  TelluricPlanet.cpp
-C:\Users\stoia\Desktop\sfml\SFML-3.0.0\include\SFML\System\Exception.hpp(41,47): warning C4275: non dll-interface class 'std::runtime_error' used as base for dll-interface class 'sf::Exception'
-  (compiling source file 'TelluricPlanet.cpp')
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\stdexcept(100,19):
-      see declaration of 'std::runtime_error'
-      C:\Users\stoia\Desktop\sfml\SFML-3.0.0\include\SFML\System\Exception.hpp(41,23):
-      see declaration of 'sf::Exception'
-  
-  ss_oop.cpp
-C:\Users\stoia\Desktop\sfml\SFML-3.0.0\include\SFML\System\Exception.hpp(41,47): warning C4275: non dll-interface class 'std::runtime_error' used as base for dll-interface class 'sf::Exception'
-  (compiling source file 'ss_oop.cpp')
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\stdexcept(100,19):
-      see declaration of 'std::runtime_error'
-      C:\Users\stoia\Desktop\sfml\SFML-3.0.0\include\SFML\System\Exception.hpp(41,23):
-      see declaration of 'sf::Exception'
-  
-C:\Users\stoia\Desktop\Git\Oop_solar_system\ss_oop\ss_oop\ss_oop.cpp(55,37): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\stoia\Desktop\Git\Oop_solar_system\ss_oop\ss_oop\ss_oop.cpp(57,40): warning C4305: 'argument': truncation from 'double' to 'float'
-  Generating Code...
   ss_oop.vcxproj -> C:\Users\stoia\Desktop\Git\Oop_solar_system\ss_oop\x64\Debug\ss_oop.exe

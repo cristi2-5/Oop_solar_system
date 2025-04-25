@@ -18,72 +18,78 @@
     <ClCompile Include="ss_oop.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SpaceObject.cpp">
+    <ClCompile Include="space_object.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Star.cpp">
+    <ClCompile Include="star.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Planet.cpp">
+    <ClCompile Include="planet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="System.cpp">
+    <ClCompile Include="system.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Satellite.cpp">
+    <ClCompile Include="satellite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TelluricPlanet.cpp">
+    <ClCompile Include="telluric_planet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GazeousPlanet.cpp">
+    <ClCompile Include="gazeous_planet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Meteorite.cpp">
+    <ClCompile Include="meteorite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BlackHole.cpp">
+    <ClCompile Include="black_hole.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Rocket.cpp">
+    <ClCompile Include="rocket.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="IRotatingEntity.cpp">
+    <ClCompile Include="i_rotating_entity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="simulation_manager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SpaceObject.h">
+    <ClInclude Include="space_object.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Star.h">
+    <ClInclude Include="star.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Planet.h">
+    <ClInclude Include="planet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="System.h">
+    <ClInclude Include="system.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Satellite.h">
+    <ClInclude Include="satellite.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TelluricPlanet.h">
+    <ClInclude Include="telluric_planet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GazeousPlanet.h">
+    <ClInclude Include="gazeous_planet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Meteorite.h">
+    <ClInclude Include="meteorite.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BlackHole.h">
+    <ClInclude Include="black_hole.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Rocket.h">
+    <ClInclude Include="rocket.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="IRotatingEntity.h">
+    <ClInclude Include="i_rotating_entity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="simulation_manager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

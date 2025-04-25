@@ -1,60 +1,64 @@
-#include "Satellite.h"
+﻿#include "satellite.h"
 #include <iostream>
 #include <cmath>
 #include <unordered_map>
 
 namespace Space {
 
-    Satellite::Satellite(std::string name, float mass, float diameter, sf::Vector2f position, std::string color, Planet* parentPlanet)
-        : SpaceObject(name, mass, diameter, position, color), parentPlanet(parentPlanet) {
+    Satellite::Satellite(std::string name, float mass, float diameter, sf::Vector2f position,
+        std::string color, Planet* parent_planet)
+        : SpaceObject(name, mass, diameter, position, color), m_parent_planet(parent_planet) {
     }
 
     Satellite::Satellite(std::string name, sf::Vector2f position)
-        : SpaceObject(name, 0.5f, 3.0f, position, "White"), parentPlanet(nullptr) {
+        : SpaceObject(name, 0.5f, 3.0f, position, "White"), m_parent_planet(nullptr) {
     }
 
-    void Satellite::afisare() const {
-        std::cout << "Satelitul " << getName() << " are un diametru de " << getDiameter() << " km, culoarea " << getColor()
-            << ", si se afla la pozitia (" << getPosition().x << ", " << getPosition().y << ")";
-        if (parentPlanet)
-            std::cout << ", orbitand planeta " << parentPlanet->getName();
+    void Satellite::Afisare() const {
+        std::cout << "Satelitul " << GetName() << " are un diametru de " << GetDiameter() << " km, culoarea "
+            << GetColor() << ", si se afla la pozitia (" << GetPosition().x << ", " << GetPosition().y << ")";
+        if (m_parent_planet)
+            std::cout << ", orbitand planeta " << m_parent_planet->GetName();
         std::cout << "." << std::endl;
     }
 
-    void Satellite::updateRotation(float step) {
-        if (!parentPlanet) return;
+    void Satellite::UpdateRotation(float step) {
+        if (!m_parent_planet) return;
 
-        static std::unordered_map<const Satellite*, OrbitData> orbitDataMap;
+        // stocarea datelor orbitei pentru fiecare obiect 
+        static std::unordered_map<const Satellite*, OrbitData> orbit_data_map;
 
-        sf::Vector2f planetPos = parentPlanet->getPosition();
-        sf::Vector2f satPos = getPosition();
+        sf::Vector2f planet_pos = m_parent_planet->GetPosition();
+        sf::Vector2f sat_pos = GetPosition();
 
-        if (orbitDataMap.find(this) == orbitDataMap.end()) {
-            float dx = satPos.x - planetPos.x;
-            float dy = satPos.y - planetPos.y;
+        // inițializam datele orbitei daca nu exista
+        if (orbit_data_map.find(this) == orbit_data_map.end()) {
+            float dx = sat_pos.x - planet_pos.x;
+            float dy = sat_pos.y - planet_pos.y;
             float radius = std::sqrt(dx * dx + dy * dy);
             float angle = std::atan2(dy, dx);
-            orbitDataMap[this] = { radius, angle };
+            orbit_data_map[this] = { radius, angle };
         }
 
-        orbitDataMap[this].angle += step;
+        orbit_data_map[this].angle += step;
 
-        float r = orbitDataMap[this].radius;
-        float angle = orbitDataMap[this].angle;
+        float r = orbit_data_map[this].radius;
+        float angle = orbit_data_map[this].angle;
 
-        float newX = planetPos.x + r * std::cos(angle);
-        float newY = planetPos.y + r * std::sin(angle);
+        float new_x = planet_pos.x + r * std::cos(angle);
+        float new_y = planet_pos.y + r * std::sin(angle);
 
-        setPosition({ newX, newY });
+        SetPosition({ new_x, new_y });
     }
 
-    sf::Vector2f Satellite::getRotationCenter() const {
-        return parentPlanet ? parentPlanet->getPosition() : sf::Vector2f(0.f, 0.f);
+    sf::Vector2f Satellite::GetRotationCenter() const {
+        return m_parent_planet ? m_parent_planet->GetPosition() : sf::Vector2f(0.f, 0.f);
     }
 
-    float Satellite::getRotationRadius() const {
-        if (!parentPlanet) return 0.f;
-        sf::Vector2f diff = getPosition() - parentPlanet->getPosition();
+    float Satellite::GetRotationRadius() const {
+        if (!m_parent_planet) return 0.f;
+        sf::Vector2f diff = GetPosition() - m_parent_planet->GetPosition();
         return std::sqrt(diff.x * diff.x + diff.y * diff.y);
     }
-}
+
+} 

@@ -1,53 +1,50 @@
-#pragma once
-#include <string>
+﻿#pragma once
+
 #include <vector>
 #include <SFML/Graphics.hpp>
-#include "Star.h"
-#include "Planet.h"
-#include "Satellite.h"
-#include "TelluricPlanet.h"
-#include "GazeousPlanet.h"
-#include "Meteorite.h"
-#include "IRotatingEntity.h"
+#include "star.h"
+#include "planet.h"
+#include "satellite.h"
+#include "meteorite.h"
+#include "space_object.h"
+
+using namespace Space;
 
 namespace Simulation {
 
-	class System {
-	private:
-		struct OrbitData {
-			float radius;
-			float angle;
-		};
+    // clasa System gestioneaza toate entitatile spatiale si logica de simulare
+    class System {
+    private:
+        std::unordered_map<std::string, SpaceObject*> m_object_map;
 
-		std::vector<Space::Meteorite> meteorites;
-		std::vector<Space::Planet*> planets;
-		std::vector<Space::TelluricPlanet*> telluricPlanets;
-		std::vector<Space::Star*> stars;
-		std::vector<Space::SpaceObject*> bodies;
-		std::vector<Space::Satellite*> satellites;
-		float meteoriteSpawnTimer = 0.0f;
-		float meteoriteSpawnInterval = 5.0f;
+        std::vector<SpaceObject*> m_bodies; // toate entitatile spatiale
+        std::vector<Star*> m_stars;
+        std::vector<Planet*> m_planets;
+        std::vector<Satellite*> m_satellites;
+        std::vector<Meteorite> m_meteorites; // meteoriti activi
 
-	public:
-		System() = default;
-		~System() = default;
+        float m_meteorite_spawn_timer = 0.f;
+        float m_meteorite_spawn_interval = 3.5f;
 
-		void addSun(Space::Star* body);
-		void addPlanet(Space::Planet* body);
-		void addSatellite(Space::Satellite* body);
+        sf::Color ColorConvertor(std::string color); 
+        sf::CircleShape CreateEntity(SpaceObject* body); // creeaza forma vizuala pt. un obiect
 
-		sf::CircleShape createEntity(Space::SpaceObject* body);
-		sf::Color colorConvertor(std::string color);
-		std::vector<sf::CircleShape> drawEntities();
+    public:
+        void AddSun(Star* body);
+        void AddPlanet(Planet* body);
+        void AddSatellite(Satellite* body);
+        std::vector<SpaceObject*>& GetBodies();
+        SpaceObject* GetObject(const std::string& name);
 
-		void rotateEntity(IRotatingEntity* entity, float step);
-		void printOrbitData(IRotatingEntity* entity);
 
-		void updateMeteorites(float dt, float screenWidth, float screenHeight);
-		void drawMeteorites(sf::RenderWindow& window);
+        std::vector<sf::CircleShape> DrawEntities();
+        void DrawMeteorites(sf::RenderWindow& window);
 
-		void printObjects() const;
+        void RotateEntity(IRotatingEntity* entity, float step); // roteste o entitate
+        void PrintOrbitData(IRotatingEntity* entity); 
 
-	};
-
-} 
+        void UpdateMeteorites(float delta_time, float screen_width, float screen_height); // update meteoriti
+        void RotateByName(const std::string& name, float step);
+        void PrintObjects() const; 
+    };
+}
